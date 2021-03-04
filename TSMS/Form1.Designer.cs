@@ -626,7 +626,7 @@
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(82, 47);
             this.BtnReset.TabIndex = 52;
-            this.BtnReset.Text = "Reset Trafic";
+            this.BtnReset.Text = "Reiniciar";
             this.BtnReset.UseVisualStyleBackColor = false;
             this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 

@@ -38,13 +38,13 @@ namespace TSMS
                 //rotando la imagen dentro del picturebox 
                 img.RotateFlip(RotateFlipType.Rotate270FlipNone);
                 EastCar1.Image = img;
-                //cambiando el tamaño del picture box
+
                 this.EastCar1.Size = new System.Drawing.Size(19, 56);
                 //configurando el carro 1 x,y 
                 int pictureBox1locationx = 411;//x
                 int pictureBox1locationy = 170;//y
                 this.EastCar1.Location = new System.Drawing.Point(pictureBox1locationx, pictureBox1locationy);
-                // pictureBox1.Top -= 40;
+
 
             }
          
@@ -85,7 +85,7 @@ namespace TSMS
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {//checking that any vehicale selected in east section or not if select then execute this code 
+        {
             //comprobando que cualquier vehículo seleccionado en la sección este o no si selecciona
             // si no se ha seleccionado algun vehiculo
             if (cmbxVehSelectEast.Text != "")
@@ -95,9 +95,9 @@ namespace TSMS
                 //incrementando el valor del tiempo 5 
                 time5 = time5 + 1;
                 label1.Text = Easttimer.ToString();
-                //condition check 
+ 
                 if (time5 >= 0 && time5 <= 1)
-                {//yellow ight ON
+                {//luz amarrillo on
                     EastovalShapeYellow.Visible = true;
                     EastovalShapeRed.Visible = false;
                     EastovalShapeGreen.Visible = false;
@@ -105,11 +105,11 @@ namespace TSMS
 
                 }
                 else if (time5 >= 1 && Easttimer >= 1)
-                {//green light ON
+                {//luz verder on
                     EastovalShapeYellow.Visible = false;
                     EastovalShapeRed.Visible = false;
                     EastovalShapeGreen.Visible = true;
-                    //moving vehicles by incrementing x axis
+                    //moviendo los vehiculos incrementando axis x
                     if (EastCar1.Visible == true)
                     {
                         if (EastCar1.Left < 410)
@@ -129,7 +129,7 @@ namespace TSMS
                         EastCar3.Left += 40;
                     }
 
-                }//countdown zero
+                }//repitiendo hasta cero
                 else if (label1.Text == "0")
                 {
                     EastovalShapeYellow.Visible = false;
@@ -140,7 +140,7 @@ namespace TSMS
                     timer1.Enabled = false;
 
                     time5 = 0;
-                    //checking the timer values which timer will satrt next
+                    //comprobando que timer iniciara proximo
                     if (Northtimer != 0)
                     {
                         timer2.Start();
@@ -157,7 +157,7 @@ namespace TSMS
 
 
             }
-                //in case no vehicle selected in the east road section  
+                // en caso que ningun carro se haya seleccionado
             else 
             {
                 if (Northtimer != 0)
@@ -189,7 +189,7 @@ namespace TSMS
 
             }
             else if (time5 >= 2 && Northtimer >= 2)
-            {//green
+            {//verde
                 NorthtovalShapeYellow.Visible = false;
                 NorthtovalShapeRed.Visible = false;
                 NorthtovalShapeGreen.Visible =true; 
@@ -326,7 +326,7 @@ namespace TSMS
 
              }
              else if (time5 >= 1 && Southtimer >= 1)
-             {//green
+             {//verde
                  SouthtovalShapeYellow.Visible = false;
                  SouthtovalShapeRed.Visible = false;
                  SouthtovalShapeGreen.Visible = true;
@@ -435,9 +435,9 @@ namespace TSMS
         {
             //checking the number of cars and setting time
             if (cmbxVehSelectEast.Text == "1")
-            {//showing Car on the road by visibly true
+            {//mostrando carros
                 EastCar1.Visible = true;
-                // setting time in seconds 
+                // tiempo en segundos
                 Easttimer = 8;
                 label1.Text = Easttimer.ToString();
             }
@@ -463,7 +463,7 @@ namespace TSMS
             if (cmbxVehSelectNorth.Text == "1")
             {
                 NorthCar1.Visible = true;
-                //sconds 
+                //segundos 
                 Northtimer = 8;
                 label2.Text = Northtimer.ToString();
             }
@@ -490,7 +490,7 @@ namespace TSMS
             if (cmbxVehSelectWest.Text == "1")
             {
                 WestCar1.Visible = true;
-                //sconds 
+                //segundos 
                 Westtimer = 8;
                 label3.Text = Westtimer.ToString();
             }
